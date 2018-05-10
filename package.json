@@ -1,0 +1,30 @@
+{
+  "name": "ts-decs",
+  "version": "0.1.0",
+  "description": "Typescript decorator libary that makes life easy and code short",
+  "main": "target/index.js",
+  "types": "target/index.d.ts",
+  "scripts": {
+    "build": "gulp"
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "keywords": [
+    "typescript",
+    "decorators"
+  ],
+  "author": "Nils Roesel",
+  "license": "MIT",
+  "bugs": {
+    "url": ""
+  },
+  "homepage": "",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-typescript": "^4.0.2",
+    "typescript": "^2.8.1"
+  },
+  "dependencies": {}
+}
