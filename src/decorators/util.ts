@@ -4,5 +4,8 @@ export function createName(key: string, functionType: FunctionTypes): string {
 
 export enum FunctionTypes {
     GET = 'get',
-    SET = 'set'
+    SET = 'set',
+    BUILD = 'build',
+    BUILDER = 'Builder',
+    TO_STRING = 'toString'
 }

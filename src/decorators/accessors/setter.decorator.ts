@@ -1,4 +1,4 @@
-import { createName, FunctionTypes } from './util';
+import { createName, FunctionTypes } from '../util';
 
 export function Set(target: any, key: string) {
     const setter = createName(key, FunctionTypes.SET);
