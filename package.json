@@ -1,7 +1,7 @@
 {
-  "name": "ts-decs",
+  "name": "@nilsroesel/utils",
   "version": "0.1.0",
-  "description": "Typescript decorator libary that makes life easy and code short",
+  "description": "Typescript util libary that makes life easy, code short and brings new functionality",
   "main": "./target/index.js",
   "types": "./target/index.d.ts",
   "scripts": {
