@@ -1,6 +1,6 @@
 {
   "name": "@nilsroesel/utils",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "Typescript util libary that makes life easy, code short and brings new functionality",
   "main": "./target/index.js",
   "types": "./target/index.d.ts",
@@ -29,5 +29,8 @@
     "gulp-typescript": "^4.0.2",
     "typescript": "^2.8.1"
   },
-  "dependencies": {}
+  "dependencies": {
+    "eventsource": "^1.0.7",
+    "node-fetch": "^2.2.0"
+  }
 }
