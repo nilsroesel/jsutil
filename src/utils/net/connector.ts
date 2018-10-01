@@ -25,18 +25,18 @@ export class Connector {
      * @param type Http Method thats used
      * @param payload Request body
      */
-    dispatch<I, R>(type: Methods, payload?: I): Promise<R> {
+    dispatch<I, R>(type: Methods, payload: I = null): Promise<R> {
         return new Promise<R>(resolve => {
             let opts = {
                 method: type.label,
                 mode: 'no-cors',
                 headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({} || payload)
+                body: JSON.stringify(payload)
             };
             if(this.proxy) opts = Object.assign({}, opts, {agent: new HttpsProxyAgent(this.proxy)} );
             fetch(this.url, opts).then(response => response.json())
                 .then(json => resolve(json as R))
-                .catch(() => resolve(null));
+                .catch((e) => resolve(null));
         });
     }
 
