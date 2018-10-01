@@ -22,7 +22,9 @@
   },
   "homepage": "https://github.com/nilsroesel/ts-decorators/wiki",
   "devDependencies": {
+    "@types/eventsource": "^1.0.2",
     "@types/node": "6.0.110",
+    "@types/node-fetch": "^2.1.2",
     "gulp": "^3.9.1",
     "gulp-typescript": "^4.0.2",
     "typescript": "^2.8.1"
