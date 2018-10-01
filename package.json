@@ -1,6 +1,6 @@
 {
   "name": "@nilsroesel/utils",
-  "version": "0.2.3",
+  "version": "0.2.4",
   "description": "Typescript util libary that makes life easy, code short and brings new functionality",
   "main": "./target/index.js",
   "types": "./target/index.d.ts",
