@@ -3,7 +3,7 @@ import { FunctionTypes } from '../util';
 export type StaticInstance<T> = { new(): T };
 
 export interface ObjectBuilder<C> {
-    [FunctionTypes.BUILD]: () => C;
+    // [FunctionTypes.BUILD]: () => C;
 }
 
 export function Builder<C>() {
