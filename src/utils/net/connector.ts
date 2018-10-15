@@ -15,9 +15,12 @@ export class Connector {
 
     private proxy: string;
 
-    private constructor(url: string, proxy?: string) {
+    private mode: Modes;
+
+    private constructor(url: string, proxy?: string, mode?: Modes) {
         this.url = url;
         this.proxy = proxy;
+        this.mode = mode;
     }
 
     /**
@@ -29,7 +32,7 @@ export class Connector {
         return new Promise<R>(resolve => {
             let opts = {
                 method: type.label,
-                mode: 'no-cors',
+                mode: this.mode,
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(payload)
             };
@@ -58,6 +61,15 @@ export class Connector {
         return new Connector(this.url, this.proxy);
     }
 
+    /**
+     * Returns a new Connector configured with the given mode. Default mode is 'no-cors'
+     * @param mode
+     */
+    setMode(mode: Modes): Connector {
+        this.mode = mode;
+        return new Connector(this.url, this.proxy, this.mode);
+    }
+
 }
 
 export class Methods {
@@ -76,4 +88,19 @@ export class Methods {
 
     private constructor(arg: string) { this.label = arg; }
 
+}
+
+export class Modes {
+
+    public static readonly NO_CORS = new Modes('no-cors');
+
+    public static readonly SAME_ORIGIN = new Modes('same-origin');
+
+    public static readonly CORS = new Modes('cors');
+
+    public static readonly  NAVIGATE = new Modes('navigate');
+
+    readonly label: string;
+
+    private constructor(arg: string) { this.label = arg; }
 }
