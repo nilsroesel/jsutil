@@ -2,6 +2,12 @@ export class UtilMap<K, V> extends Map<K, V> implements Mappable {
 
     constructor(...args) { super(args); }
 
+    static createES5UtilMap<K, V>(...args: any[]): UtilMap<K, V> {
+        const map = new Map(args);
+        map['__proto__'] = UtilMap.prototype;
+        return map as UtilMap<K, V>;
+    }
+
     /**
      * Transform all map values by the given function
      * @param supplier function to transform the object. takes the map value as first argument and the key as second
