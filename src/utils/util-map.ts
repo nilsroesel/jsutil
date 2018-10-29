@@ -59,7 +59,7 @@ class ES5Map<K, V> extends UtilMap<K, V> implements Mappable {
 
     static new<K, V>(...args: any[]): UtilMap<K, V> {
         const map = new Map(args);
-        map['__proto__'] = UtilMap.prototype;
+        map['__proto__'] = ES5Map.prototype;
         return map as UtilMap<K, V>;
     }
 
